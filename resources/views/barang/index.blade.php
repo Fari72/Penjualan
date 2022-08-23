@@ -9,7 +9,8 @@
     <div class="card-header">
         <div class="card-title">
             <h5>Data Barang</h5>
-            <button type="button" class="btn btn-danger btn-sm float-end" data-bs-toggle="modal" data-bs-target="#modaltambah"><i class="fa fa-plus"></i>
+            <button type="button" class="btn btn-danger btn-sm float-end" data-bs-toggle="modal" 
+            data-bs-target="#modaltambah"><i class="fa fa-plus"></i>
             </button>
         </div>
     </div>

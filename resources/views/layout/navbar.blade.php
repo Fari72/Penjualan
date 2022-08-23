@@ -16,7 +16,7 @@
           <a class="nav-link" href="/supplier"><i class="fa-solid fa-box-open"></i> Supplier</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/pembeli"><i class="fa-solid fa-person"></i> Pembeli</a>
+          <a class="nav-link" href="/pembeli"><i class="fa-solid fa-person"></i> Member</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/pembelian"><i class="fa-solid fa-store"></i> Pembelian</a>
