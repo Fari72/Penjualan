@@ -14,7 +14,8 @@ class PenjualanController extends Controller
      */
     public function index()
     {
-        //
+        $penjualan = Penjualan::all();
+        return view('penjualan.index', compact('penjualan'));
     }
 
     /**

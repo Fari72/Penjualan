@@ -14,7 +14,8 @@ class PembeliController extends Controller
      */
     public function index()
     {
-        //
+        $pembeli = Pembeli::all();
+        return view('pembeli.index', compact('pembeli'));
     }
 
     /**

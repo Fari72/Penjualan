@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{
+    KategoriController
+};
 
 Route::get('/', function () {
     return view('home');
@@ -10,9 +13,10 @@ Route::get('/barang', function () {
     return view('barang.index');
 });
 
-Route::get('/kategori', function () {
-    return view('kategori.index');
-});
+//Route Kategori
+Route::resource('/kategori',KategoriController::class);
+Route::get('/kategori/edit/{id}', [KategoriController::class, 'edit']);
+Route::get('/kategori/hapus/{id}', [KategoriController::class, 'destroy']);
 
 Route::get('/supplier', function () {
     return view('supplier.index');
