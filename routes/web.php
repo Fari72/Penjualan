@@ -2,24 +2,24 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
-    KategoriController
+    KategoriController,
+    BarangController
 };
 
 Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/barang', function () {
-    return view('barang.index');
-});
+//Route barang
+Route::resource('/barang', BarangController::class);
 
 //Route Kategori
 Route::resource('/kategori',KategoriController::class);
 Route::get('/kategori/edit/{id}', [KategoriController::class, 'edit']);
 Route::get('/kategori/hapus/{id}', [KategoriController::class, 'destroy']);
 
-Route::get('/supplier', function () {
-    return view('supplier.index');
+Route::get('/suplier', function () {
+    return view('suplier.index');
 });
 
 Route::get('/pembeli', function () {

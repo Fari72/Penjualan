@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    Pembeli
+    Member
 @endsection
 
 @section('content')

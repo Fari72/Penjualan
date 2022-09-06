@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Barang;
+use App\Models\Kategori;
+use App\Models\Suplier;
 use Illuminate\Http\Request;
 
 class BarangController extends Controller
@@ -14,7 +16,7 @@ class BarangController extends Controller
      */
     public function index()
     {
-        $Barang = Barang::all();
+        $barang = Barang::all();
         return view('barang.index', compact('barang'));
     }
 
@@ -25,7 +27,9 @@ class BarangController extends Controller
      */
     public function create()
     {
-        //
+        $kategori = Kategori::all();
+        $suplier = Suplier::all();
+        return view ('barang.add', compact('kategori', 'suplier'));
     }
 
     /**
@@ -36,7 +40,16 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'nama' => 'required|max:255',
+            'harga' => 'required|numeric',
+            'stok' => 'required|numeric|min:0',
+            'suplier_id' => 'required',
+            'kategori_id' => 'required'
+        ]);
+
+        $barang = Barang::create($request->all());
+        return redirect('barang.index');
     }
 
     /**

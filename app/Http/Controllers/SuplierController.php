@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Suplier;
 use Illuminate\Http\Request;
 
+
 class SuplierController extends Controller
 {
     /**
@@ -14,8 +15,8 @@ class SuplierController extends Controller
      */
     public function index()
     {
-        $supplier = Supplier::all();
-        return view('supplier.index', compact('supplier'));
+        $suplier = Suplier::all();
+        return view('suplier.index', compact('suplier'));
     }
 
     /**
@@ -25,7 +26,9 @@ class SuplierController extends Controller
      */
     public function create()
     {
-        //
+        $kategori = kategori::all();
+        $suplier = Suplier::all();
+        return view('barang.add', compact('kategori', 'suplier'));
     }
 
     /**

@@ -9,9 +9,9 @@
     <div class="card-header">
         <div class="card-title">
             <h5>Data Barang</h5>
-            <button type="button" class="btn btn-danger btn-sm float-end" data-bs-toggle="modal" 
-            data-bs-target="#modaltambah"><i class="fa fa-plus"></i>
-            </button>
+            <a class="btn btn-danger btn-sm float-end" href="{{route('barang.create')}}">
+                <i class="fa fa-plus"></i>
+        </a>
         </div>
     </div>
 
@@ -24,25 +24,27 @@
                     <th>Nama</th>
                     <th>Harga</th>
                     <th>Stok</th>
-                    <th>Supplier</th>
+                    <th>Suplier</th>
                     <th>Kategori</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
     </div>
         <tbody>
+            @foreach ($barang as $item)
             <tr>
-                <td>1</td>
-                <td>Ballester–Molina</td>
-                <td>Rp13.000.000</td>
-                <td>5</td>
-                <td>Argentina</td>
-                <td>Pistol</td>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$item->nama}}</td>
+                <td>{{$item->harga}}</td>
+                <td>{{$item->stok}}</td></td>
+                <td>{{$item->suplier_id}}</td>
+                <td>{{$item->kategori_id}}</td>
                 <td>
                     <a href="#" class="btn btn-warning btn-sm"><i class="fa-solid fa-edit"></i> </a>
                     <a href="#" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i> </a>
                 </td>
             </tr>
+            @endforeach
 
         </tbody>
         </table>

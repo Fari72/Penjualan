@@ -13,7 +13,7 @@
           <a class="nav-link" href="/kategori"><i class="fa-solid fa-cart-shopping"></i> Kategori</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/supplier"><i class="fa-solid fa-box-open"></i> Supplier</a>
+          <a class="nav-link" href="/suplier"><i class="fa-solid fa-box-open"></i> Suplier</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/pembeli"><i class="fa-solid fa-person"></i> Member</a>
