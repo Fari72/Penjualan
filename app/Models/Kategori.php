@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Barang;
 
 class Kategori extends Model
 {
@@ -13,4 +14,8 @@ class Kategori extends Model
     
     // ini jika kita menggunakan Eloquent ORM
     protected $guarded = [];
+
+    public function barang(){
+        return $this ->belongsToMany(Barang::class);
+    }
 }

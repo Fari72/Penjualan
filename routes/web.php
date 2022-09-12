@@ -12,6 +12,8 @@ Route::get('/', function () {
 
 //Route barang
 Route::resource('/barang', BarangController::class);
+Route::get('/barang/{id}/edit', [BarangController::class, 'edit']);
+Route::get('/barang/{id}/hapus', [BarangController::class, 'destroy']);
 
 //Route Kategori
 Route::resource('/kategori',KategoriController::class);
