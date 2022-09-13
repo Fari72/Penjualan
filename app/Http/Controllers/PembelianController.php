@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pembelian;
+use App\Models\Pembelian;
+use App\Models\Barang;
 use Illuminate\Http\Request;
 
 class pembelianController extends Controller
@@ -14,6 +15,7 @@ class pembelianController extends Controller
      */
     public function index()
     {
+        $barang = Barang::all();
         $pembelian = Pembelian::all();
         return view('pembelian.index', compact('pembelian'));
     }
@@ -38,7 +40,7 @@ class pembelianController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'barang' => 'required|numeric',
+            'barang_id' => 'required',
             'jumlah' => 'required|numeric',
             'harga' => 'required|numeric'
 
@@ -68,7 +70,7 @@ class pembelianController extends Controller
     public function edit($id)
     {
         $pembelian = Pembelian::find($id);
-        return view('pembelian', compact('pembelian'));
+        return view('pembelian.edit', compact('pembelian'));
     }
 
     /**
@@ -81,14 +83,14 @@ class pembelianController extends Controller
     public function update(Request $request, pembelian $pembelian)
     {
         $validate = $request->validate([
-            'barang' => 'required|numeric',
+            'barang_id' => 'required|numeric',
             'jumlah' => 'required|numeric',
             'harga' => 'required|numeric'
             
         ]);
 
         $pembelian->update([
-            'barang'=>$request->barang,
+            'barang_id'=>$request->barang_id,
             'jumlah'=>$request->jumlah,
             'harga'=>$request->harga
             

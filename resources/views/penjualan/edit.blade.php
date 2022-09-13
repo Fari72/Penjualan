@@ -19,9 +19,9 @@
             <div class="row">
                 <div class="col-lg-6">
                 <div class="form-group">
-                    <label for="nama">Barang id</label>
-                    <input type="number" name="barang" class="form-control" value="{{$pjn->barang}}" @error('barang') is invalid @enderror>
-                    @error('barang')
+                    <label for="barang_id">Barang id</label>
+                    <input type="number" name="barang_id" class="form-control" value="{{$pjn->barang_id}}" @error('barang_id') is invalid @enderror>
+                    @error('barang_id')
                     <div class="text-danger">
                         {{$message}}
                     </div>
@@ -31,9 +31,9 @@
 
                 <div class="col-lg-6">
                     <div class="form-group">    
-                        <label for="nama">Pembeli id</label>
-                        <input type="number" name="pembeli" class="form-control" value="{{$pjn->pembeli}}" @error('pembeli') is invalid @enderror>
-                        @error('pembeli')
+                        <label for="pembeli_id">Pembeli id</label>
+                        <input type="number" name="pembeli_id" class="form-control" value="{{$pjn->pembeli_id}}" @error('pembeli_id') is invalid @enderror>
+                        @error('pembeli_id')
                     <div class="text-danger">
                         {{$message}}
                     </div>
@@ -59,9 +59,9 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <label for="harga">harga</label>
-                        <input type="number" name="harga" class="form-control" value="{{$pjn->harga}}" @error('harga') is invalid @enderror>
-                        @error('harga')
+                        <label for="harga_jual">harga jual</label>
+                        <input type="number" name="harga_jual" class="form-control" value="{{$pjn->harga_jual}}" @error('harga_jual') is invalid @enderror>
+                        @error('harga_jual')
                     <div class="text-danger">
                         {{$message}}
                     </div>

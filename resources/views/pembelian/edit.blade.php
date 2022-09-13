@@ -13,32 +13,32 @@
     </div>
 
     <div class="card-body">
-        <form action="{{route('pembelian.update', $pan->id)}}" method="POST">
+        <form action="{{route('pembelian.update', $pembelian->id)}}" method="POST">
             @csrf
             @method('PUT')
+
             <div class="row">
                 <div class="col-lg-6">
                 <div class="form-group">
-                    <label for="barang">barang</label>
-                    <input type="number" name="barang" class="form-control" value="{{$pembelian->barang}}" @error('barang') is invalid @enderror>
-                    @error('barang')
+                    <label for="barang_id">barang id</label>
+                    <input type="number" name="barang_id" class="form-control" value="{{$pembelian->barang_id}}" @error('barang_id') is invalid @enderror>
+                    @error('barang_id')
                     <div class="text-danger">
                         {{$message}}
                     </div>
                     @enderror
                 </div>
                 </div>
-            </div>
-            <div class="row">
+                
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="jumlah">jumlah</label>
                         <input type="number" name="jumlah" class="form-control" value="{{$pembelian->jumlah}}" @error('jumlah') is invalid @enderror>
                         @error('jumlah')
-                    <div class="text-danger">
-                        {{$message}}
-                    </div>
-                    @enderror
+                        <div class="text-danger">
+                            {{$message}}
+                        </div>
+                        @enderror
                     </div>
                 </div>
             </div>

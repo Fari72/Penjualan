@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Penjualan;
+use App\Models\Barang;
+use App\Models\Pembeli;
 use Illuminate\Http\Request;
 
 class PenjualanController extends Controller
@@ -14,6 +16,7 @@ class PenjualanController extends Controller
      */
     public function index()
     {
+        
         $penjualan = Penjualan::all();
         return view('penjualan.index', compact('penjualan'));
     }
@@ -25,7 +28,9 @@ class PenjualanController extends Controller
      */
     public function create()
     {
-        $penjualan = Penjualan::all();
+
+        $barang = Barang::all();
+        $pembeli = Pembeli::all();
         return view('penjualan.add', compact('penjualan'));
     }
 
@@ -38,10 +43,10 @@ class PenjualanController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'barang' => 'required|numeric',
-            'pembeli' => 'required|numeric',
+            'barang_id' => 'required',
+            'pembeli_id' => 'required|numeric',
             'jumlah' => 'required|numeric',
-            'harga' => 'required|numeric'
+            'harga_jual' => 'required|numeric'
 
         ]);
 
@@ -82,18 +87,18 @@ class PenjualanController extends Controller
     public function update(Request $request, Penjualan $penjualan)
     {
         $validate = $request->validate([
-            'barang' => 'required|numeric',
-            'pembeli' => 'required|numric',
+            'barang_id' => 'required|numeric',
+            'pembeli_id' => 'required|numeric',
             'jumlah' => 'required|numeric',
-            'harga' => 'required|numeric'
+            'harga_jual' => 'required|numeric'
             
         ]);
 
         $penjualan->update([
-            'barang'=>$request->barang,
-            'pembeli'=>$request->pembeli,
+            'barang_id'=>$request->barang_id,
+            'pembeli_id'=>$request->pembeli_id,
             'jumlah'=>$request->jumlah,
-            'harga'=>$request->harga
+            'harga_jual'=>$request->harga_jual
             
         ]);
         return redirect('penjualan');

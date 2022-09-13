@@ -20,7 +20,7 @@
                 <div class="col-lg-6">
                 <div class="form-group">
                     <label for="barang_id">barang id</label>
-                    <input type="number" name="barang_id" class="form-control" value="{{old('barang_id')}}" @error('barang_id') is invalid @enderror>
+                    <input type="numeric" name="barang_id" class="form-control" value="{{old('barang_id')}}" @error('barang_id') is invalid @enderror>
                     @error('barang_id')
                     <div class="text-danger">
                         {{$message}}
@@ -29,11 +29,11 @@
                 </div>
                 </div>
 
-            <div class="row">
+            
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="jumlah">jumlah</label>
-                        <input type="number" name="jumlah" class="form-control" id="floatingTextarea" @error('jumlah') is invalid @enderror>
+                        <input type="number" name="jumlah" class="form-control" value="{{old('jumlah')}}" @error('jumlah') is invalid @enderror>
                         @error('jumlah')
                     <div class="text-danger">
                         {{$message}}
@@ -43,15 +43,17 @@
                 </div>
             </div>
 
-                <div class="col-lg-6">
-                    <div class="form-group">    
-                        <label for="harga">harga</label>
-                        <input type="number" name="harga" class="form-control" value="{{old('harga')}}" @error('harga') is invalid @enderror>
-                        @error('harga')
-                    <div class="text-danger">
-                        {{$message}}
-                    </div>
-                    @enderror
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">    
+                            <label for="harga">harga</label>
+                            <input type="numeric" name="harga" class="form-control" value="{{old('harga')}}" @error('harga') is invalid @enderror>
+                            @error('harga')
+                            <div class="text-danger">
+                                {{$message}}
+                            </div>
+                            @enderror
+                        </div>
                     </div>
                 </div>
 

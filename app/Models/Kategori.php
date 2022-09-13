@@ -15,7 +15,7 @@ class Kategori extends Model
     // ini jika kita menggunakan Eloquent ORM
     protected $guarded = [];
 
-    public function barang(){
+    public function Barang(){
         return $this ->belongsToMany(Barang::class);
     }
 }

@@ -14,7 +14,7 @@ class Suplier extends Model
 
     protected $guarded = [];
 
-    public function barang(){
+    public function Barang(){
         return $this->belongsToMany(Barang::class);
     }
 }

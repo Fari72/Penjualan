@@ -14,7 +14,7 @@ class Pembelian extends Model
 
     protected $guarded = [];
 
-    public function barang(){
-        return $this->belongsToMany(Barang::class);
+    public function Barang(){
+        return $this->belongsTo(Barang::class);
     }
 }

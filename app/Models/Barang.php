@@ -18,22 +18,23 @@ class Barang extends Model
 
     protected $guarded = [];
 
-    public function kategori(){
+    public function Kategori(){
         return $this->belongsTo(Kategori::class);
     }
 
-    public function pembeli(){
-        return $this->belongsTo(Pembeli::class);
-    }
-    public function pembelian(){
-        return $this->belongsTo(Pembeli::class);
-    }
-    public function penjualan(){
+    public function Pembeli(){
         return $this->belongsTo(Pembeli::class);
     }
 
-    public function suplier(){
+    public function Pembelian(){
+        return $this->hasMany(Pembelian::class);
+    }
+
+    public function Penjualan(){
+        return $this->hasMany(Penjualan::class);
+    }
+
+    public function Suplier(){
         return $this->belongsTo(Suplier::class);
     }
-
 }

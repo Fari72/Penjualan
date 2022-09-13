@@ -14,7 +14,11 @@ class Pembeli extends Model
 
     protected $guarded = [];
 
-    public function barang(){
+    public function Barang(){
         return $this->belongsToMany(Barang::class);
+    }
+
+    public function Penjualan(){
+        return $this->hasMany(Penjualan::class);
     }
 }
