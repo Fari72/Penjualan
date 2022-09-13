@@ -25,7 +25,8 @@ class PembeliController extends Controller
      */
     public function create()
     {
-        //
+        $pembeli = Pembeli::all();
+        return view ('pembeli.add', compact('pembeli'));
     }
 
     /**
@@ -36,7 +37,14 @@ class PembeliController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'nama' => 'required|max:255',
+            'telepon' => 'required|numeric',
+            'alamat' => 'required|max:255'
+        ]);
+
+        $pembeli = Pembeli::create($request->all());
+        return redirect('pembeli');
     }
 
     /**
@@ -56,9 +64,10 @@ class PembeliController extends Controller
      * @param  \App\Models\Pembeli  $pembeli
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pembeli $pembeli)
+    public function edit($id)
     {
-        //
+        $p = Pembeli::find($id);
+        return view('pembeli.edit', compact('p'));
     }
 
     /**
@@ -70,7 +79,20 @@ class PembeliController extends Controller
      */
     public function update(Request $request, Pembeli $pembeli)
     {
-        //
+        $validate = $request->validate([
+            'nama' => 'required|max:255',
+            'telepon' => 'required|numeric',
+            'alamat' => 'required|max:255'
+            
+        ]);
+
+        $pembeli->update([
+            'nama'=>$request->nama,
+            'telepon'=>$request->telepon,
+            'alamat'=>$request->alamat
+            
+        ]);
+        return redirect('pembeli');
     }
 
     /**
@@ -79,8 +101,11 @@ class PembeliController extends Controller
      * @param  \App\Models\Pembeli  $pembeli
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pembeli $pembeli)
+    public function destroy($id)
     {
-        //
+        $pembeli = Pembeli::find($id);
+        $pembeli->delete();
+
+        return redirect('pembeli');
     }
 }

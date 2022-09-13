@@ -9,8 +9,7 @@
     <div class="card-header">
         <div class="card-title">
             <h5>Data Penjualan</h5>
-            <button type="button" class="btn btn-danger btn-sm float-end" data-bs-toggle="modal" data-bs-target="#modaltambah"><i class="fa fa-plus"></i>
-            </button>
+            <a class="btn btn-danger btn-sm float-end" href="{{route('penjualan.create')}}"><i class="fa fa-plus"></i></a>
         </div>
     </div>
 
@@ -27,20 +26,21 @@
                     <th>Aksi</th>
                 </tr>
             </thead>
-    </div>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Ballester–Molina</td>
-                <td>Farik</td>
-                <td>1</td>
-                <td>Rp13.000.000</td>
+            <tbody>
+                @foreach($penjualan as $item)
+                <tr>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$item->barang}}</td>
+                <td>{{$item->pembeli}}</td>
+                <td>{{$item->jumlah}}</td>
+                <td>{{$item->harga}}</td>
                 <td>
-                    <a href="#" class="btn btn-warning btn-sm"><i class="fa-solid fa-edit"></i> </a>
-                    <a href="#" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i> </a>
+                    <a href="/penjualan/edit/{{$item->id}}" class="btn btn-warning btn-sm"><i class="fa-solid fa-edit"></i> </a>
+                    <a href="/penjualan/hapus/{{$item->id}}" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i> </a>
                 </td>
             </tr>
-
+            @endforeach
+        </div>
         </tbody>
         </table>
     </div>

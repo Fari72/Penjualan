@@ -10,8 +10,7 @@
         <div class="card-title">
             <h5>Data Barang</h5>
             <a class="btn btn-danger btn-sm float-end" href="{{route('barang.create')}}">
-                <i class="fa fa-plus"></i>
-        </a>
+                <i class="fa fa-plus"></i></a>
         </div>
     </div>
 
@@ -36,7 +35,7 @@
                 <td>{{$loop->iteration}}</td>
                 <td>{{$item->nama}}</td>
                 <td>{{$item->harga}}</td>
-                <td>{{$item->stok}}</td></td>
+                <td>{{$item->stok}}</td>
                 <td>{{$item->suplier->nama}}</td>
                 <td>{{$item->kategori->nama}}</td>
                 <td>

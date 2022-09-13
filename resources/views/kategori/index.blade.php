@@ -65,7 +65,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="/kategori" class="btn btn-secondary" role="button">Batal</a>
           <button type="submit" class="btn btn-primary">Simpan</button>
         </div>
       </form>

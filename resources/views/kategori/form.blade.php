@@ -26,6 +26,7 @@
                 </div>
             </div>
             <div class="modal-footer">
+              <a href="/kategori" class="btn btn-secondary" role="button">Batal</a>
           <button type="submit" class="btn btn-primary">Simpan</button>
         </div>
       </form>

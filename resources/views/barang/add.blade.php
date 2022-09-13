@@ -15,7 +15,7 @@
     <div class="card-body">
         <form action="{{route('barang.store')}}" method="POST">
             @csrf
-            @method('PUT')
+            {{-- @method('PUT') --}}
 
             <div class="row">
                 <div class="col-lg-6">
@@ -87,6 +87,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
+                            <a href="/barang" class="btn btn-secondary" role="button">Batal</a>
                             <button class="btn btn-danger" type="submit"><i class="fa fa-save"></i> Simpan</button>
                         </div>
         </form>

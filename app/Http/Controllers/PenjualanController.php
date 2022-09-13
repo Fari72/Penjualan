@@ -25,7 +25,8 @@ class PenjualanController extends Controller
      */
     public function create()
     {
-        //
+        $penjualan = Penjualan::all();
+        return view('penjualan.add', compact('penjualan'));
     }
 
     /**
@@ -36,7 +37,16 @@ class PenjualanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'barang' => 'required|numeric',
+            'pembeli' => 'required|numeric',
+            'jumlah' => 'required|numeric',
+            'harga' => 'required|numeric'
+
+        ]);
+
+        $penjualan = Penjualan::create($request->all());
+        return redirect('penjualan');
     }
 
     /**
@@ -56,9 +66,10 @@ class PenjualanController extends Controller
      * @param  \App\Models\Penjualan  $penjualan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Penjualan $penjualan)
+    public function edit($id)
     {
-        //
+        $pjn = Penjualan::find($id);
+        return view('penjualan.edit', compact('pjn'));
     }
 
     /**
@@ -70,7 +81,22 @@ class PenjualanController extends Controller
      */
     public function update(Request $request, Penjualan $penjualan)
     {
-        //
+        $validate = $request->validate([
+            'barang' => 'required|numeric',
+            'pembeli' => 'required|numric',
+            'jumlah' => 'required|numeric',
+            'harga' => 'required|numeric'
+            
+        ]);
+
+        $penjualan->update([
+            'barang'=>$request->barang,
+            'pembeli'=>$request->pembeli,
+            'jumlah'=>$request->jumlah,
+            'harga'=>$request->harga
+            
+        ]);
+        return redirect('penjualan');
     }
 
     /**
@@ -79,8 +105,11 @@ class PenjualanController extends Controller
      * @param  \App\Models\Penjualan  $penjualan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Penjualan $penjualan)
+    public function destroy($id)
     {
-        //
+        $penjualan = penjualan::find($id);
+        $penjualan->delete();
+
+        return redirect('penjualan');
     }
 }
