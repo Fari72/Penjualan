@@ -30,8 +30,8 @@
                 @foreach($penjualan as $item)
                 <tr>
                 <td>{{$loop->iteration}}</td>
-                <td>{{$item->barang->nama}}</td>
-                <td>{{$item->pembeli->nama}}</td>
+                <td>{{! empty($item->barang->nama) ? $item->barang->nama : ''}}</td>
+                <td>{{! empty($item->pembeli->nama) ? $item->pembeli->nama : ''}}</td>
                 <td>{{$item->jumlah}}</td>
                 <td>{{$item->harga_jual}}</td>
                 <td>

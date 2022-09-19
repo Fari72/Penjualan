@@ -63,7 +63,7 @@
                                     {{$message}}
                                 </div>
                             @enderror
-                            <option value="{{$b->suplier_id}}" selected>{{$b->suplier->nama}}</option>
+                            <option value="{{$b->suplier_id}}" selected>{{! empty($b->suplier->nama) ? $b->suplier->nama : ''}}</option>
                             @foreach ($suplier as $s)
                             <option value="{{$s->id}}">{{$s->nama}}</option>
                             @endforeach
@@ -79,7 +79,7 @@
                                     {{$message}}
                                 </div>
                                 @enderror
-                                <option value="{{$b->kategori_id}}" selected>{{$b->kategori->nama}}</option>
+                                <option value="{{$b->kategori_id}}" selected>{{! empty($b->kategori->nama) ? $b->kategori->nama : ''}}</option>
                                 @foreach ($kategori as $item)
                                 <option value="{{$item->id}}">{{$item->nama}}</option>
                                 @endforeach

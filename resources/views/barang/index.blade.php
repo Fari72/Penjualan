@@ -36,8 +36,10 @@
                 <td>{{$item->nama}}</td>
                 <td>{{$item->harga}}</td>
                 <td>{{$item->stok}}</td>
-                <td>{{$item->suplier->nama}}</td>
-                <td>{{$item->kategori->nama}}</td>
+                {{-- jika id tidak ditemukan menjadi kosong --}}
+                <td>{{! empty($item->suplier->nama) ? $item->suplier->nama : ''}}</td>
+                <td>{{! empty($item->kategori->nama) ? $item->kategori->nama : ''}}</td>
+                
                 <td>
                     <a href="/barang/{{$item->id}}/edit" class="btn btn-warning btn-sm"><i class="fa-solid fa-edit"></i> </a>
                     <a href="/barang/{{$item->id}}/hapus" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i> </a>

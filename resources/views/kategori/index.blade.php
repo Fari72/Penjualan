@@ -32,12 +32,12 @@
               <td>{{$item->nama}}</td>
               <td width="15%">
                   <a href="/kategori/edit/{{$item->id}}" class="btn btn-warning btn-sm"><i class="fa-solid fa-edit"></i></a>
-                  <!-- <form action="{{route('kategori.destroy', $item->id)}}" method="POST">
+                  {{-- <form action="{{route('kategori.destroy', $item->id)}}" method="POST">
                     @csrf
                     @method('delete')
                     <button class="btn btn-sm btn-danger" type="submit"><i class="fa-solid fa-trash"></i>
                   </button>
-                  </form> -->
+                  </form> --}}
                   <a href="/kategori/hapus/{{$item->id}}" class="btn btn-danger btn-sm ">
                     <i class="fa-solid fa-trash"></i></a>
                 </td>

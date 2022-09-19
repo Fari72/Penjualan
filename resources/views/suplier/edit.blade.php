@@ -54,7 +54,7 @@
                     @enderror
                     </div>
                     <div class="modal-footer">
-                        <a href="/barang" class="btn btn-secondary" role="button">Close</a>
+                        <a href="/suplier" class="btn btn-secondary" role="button">Close</a>
                         <button class="btn btn-warning" type="submit"><i class="fa fa-save"></i> Update</button>
                     </div>
         </form>

@@ -21,15 +21,20 @@
                 <div class="col-lg-6">
                 <div class="form-group">
                     <label for="barang_id">barang id</label>
-                    <input type="number" name="barang_id" class="form-control" value="{{$pembelian->barang_id}}" @error('barang_id') is invalid @enderror>
+                    <select type="number" name="barang_id" class="form-control" value="{{$pembelian->barang_id}}" @error('barang_id') is invalid @enderror>
                     @error('barang_id')
                     <div class="text-danger">
                         {{$message}}
                     </div>
                     @enderror
+                    <option value="{{$pembelian->barang_id}}" selected>{{! empty($pembelian->barang->nama) ? $pembelian->barang->nama : ''}}</option>
+                    @foreach ($pembelian as $item)
+                    <option value="{{$pembelian->nama}}">{{$pembelian->nama}}</option>
+                    @endforeach
+                    </select>
                 </div>
                 </div>
-                
+
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="jumlah">jumlah</label>

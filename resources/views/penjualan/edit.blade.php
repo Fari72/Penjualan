@@ -20,24 +20,34 @@
                 <div class="col-lg-6">
                 <div class="form-group">
                     <label for="barang_id">Barang id</label>
-                    <input type="number" name="barang_id" class="form-control" value="{{$pjn->barang_id}}" @error('barang_id') is invalid @enderror>
+                    <select type="number" name="barang_id" class="form-control" value="{{$pjn->barang_id}}" @error('barang_id') is invalid @enderror>
                     @error('barang_id')
                     <div class="text-danger">
                         {{$message}}
                     </div>
                     @enderror
+                    <option value="{{$pjn->barang_id}}" selected>{{! empty($pjn->barang->nama) ? $pjn->barang->nama : ''}}</option>
+                    @foreach ($pjn as $item)
+                    <option value="{{$pjn->nama}}">{{$pjn->nama}}</option>
+                    @endforeach
+                    </select>
                 </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="form-group">    
                         <label for="pembeli_id">Pembeli id</label>
-                        <input type="number" name="pembeli_id" class="form-control" value="{{$pjn->pembeli_id}}" @error('pembeli_id') is invalid @enderror>
+                        <select type="number" name="pembeli_id" class="form-control" value="{{$pjn->pembeli_id}}" @error('pembeli_id') is invalid @enderror>
                         @error('pembeli_id')
                     <div class="text-danger">
                         {{$message}}
                     </div>
-                    @enderror
+                        @enderror
+                        <option value="{{$pjn->pembeli_id}}" selected>{{! empty($pjn->pembeli->nama) ? $pjn->pembeli->nama : ''}}</option>
+                        @foreach ($pjn as $item)
+                        <option value="{{$pjn->nama}}">{{$pjn->nama}}</option>
+                        @endforeach
+                        </select>
                     </div>
                 </div>
             </div>
@@ -54,9 +64,7 @@
                     @enderror
                     </div>
                 </div>
-            </div>
-
-            <div class="row">
+                
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="harga_jual">harga jual</label>
@@ -66,9 +74,9 @@
                         {{$message}}
                     </div>
                     @enderror
-                    </div>
                 </div>
             </div>
+        </div>
 
             <div class="modal-footer">
                 <a href="/penjualan" class="btn btn-secondary" role="button">Close</a>
