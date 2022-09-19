@@ -19,13 +19,17 @@
             <div class="row">
                 <div class="col-lg-6">
                 <div class="form-group">
-                    <label for="barang_id">barang id</label>
-                    <input type="numeric" name="barang_id" class="form-control" value="{{old('barang_id')}}" @error('barang_id') is invalid @enderror>
+                    <label for="barang_id">barang</label>
+                    <select type="numeric" name="barang_id" class="form-control" value="{{old('barang_id')}}" @error('barang_id') is invalid @enderror>
                     @error('barang_id')
                     <div class="text-danger">
                         {{$message}}
                     </div>
                     @enderror
+                    @foreach ($barang as $item)
+                    <option value="{{$item->id}}">{{$item->nama}}</option>
+                    @endforeach
+                    </select>
                 </div>
                 </div>
 

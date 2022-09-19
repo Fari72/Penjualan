@@ -16,9 +16,10 @@ class PenjualanController extends Controller
      */
     public function index()
     {
-        
+        $barang = Barang::all();
         $penjualan = Penjualan::all();
-        return view('penjualan.index', compact('penjualan'));
+        $pembeli = Pembeli::all();
+        return view('penjualan.index', compact('penjualan','barang','pembeli'));
     }
 
     /**
@@ -31,7 +32,8 @@ class PenjualanController extends Controller
 
         $barang = Barang::all();
         $pembeli = Pembeli::all();
-        return view('penjualan.add', compact('penjualan'));
+        $penjualan = Penjualan::all();
+        return view('penjualan.add', compact('penjualan','barang','pembeli'));
     }
 
     /**

@@ -27,8 +27,9 @@ class pembelianController extends Controller
      */
     public function create()
     {
+        $barang = Barang::all();
         $pembelian = Pembelian::all();
-        return view('pembelian.add', compact('pembelian'));
+        return view('pembelian.add', compact('pembelian','barang'));
     }
 
     /**

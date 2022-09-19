@@ -35,7 +35,7 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$item->nama}}</td>
                     <td>{{$item->telepon}}</td>
-                    <td>{{$item->alamat}}</td></td>
+                    <td>{{$item->alamat}}</td>
                     <td>
                         <a href="/suplier/edit/{{$item->id}}" class="btn btn-warning btn-sm"><i class="fa-solid fa-edit"></i> </a>
                         <a href="/suplier/hapus/{{$item->id}}" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i> </a>

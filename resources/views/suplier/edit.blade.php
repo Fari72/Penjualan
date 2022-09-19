@@ -13,13 +13,13 @@
     </div>
 
     <div class="card-body">
-        <form action="{{route('barang.update', $s->id)}}" method="POST">
+        <form action="{{route('suplier.update', $s->id)}}" method="POST">
             @csrf
             @method('PUT')
             <div class="row">
                 <div class="col-lg-6">
                 <div class="form-group">
-                    <label for="nama">Nama Barang</label>
+                    <label for="nama">Nama Suplier</label>
                     <input type="text" name="nama" class="form-control" value="{{$s->nama}}" @error('nama') is invalid @enderror>
                     @error('nama')
                     <div class="text-danger">
