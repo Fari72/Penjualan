@@ -48,6 +48,14 @@ class pembelianController extends Controller
         ]);
 
         $pembelian = Pembelian::create($request->all());
+
+        $id_barang = $request->barang_id;
+        $barang = Barang::find($id_barang);
+        $barang->stok += $request->jumlah;
+        $barang->update();
+
+        $pembelian->save();
+
         return redirect('pembelian');
     }
 
