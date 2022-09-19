@@ -22,7 +22,7 @@
                     <th>Barang</th>
                     <th>Pembeli</th>
                     <th>Jumlah</th>
-                    <th>Harga Jual</th>
+                    <th>Harga</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -33,7 +33,7 @@
                 <td>{{! empty($item->barang->nama) ? $item->barang->nama : ''}}</td>
                 <td>{{! empty($item->pembeli->nama) ? $item->pembeli->nama : ''}}</td>
                 <td>{{$item->jumlah}}</td>
-                <td>{{$item->harga_jual}}</td>
+                <td>RP. {{$item->harga_jual}}</td>
                 <td>
                     <a href="/penjualan/edit/{{$item->id}}" class="btn btn-warning btn-sm"><i class="fa-solid fa-edit"></i> </a>
                     <a href="/penjualan/hapus/{{$item->id}}" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i> </a>

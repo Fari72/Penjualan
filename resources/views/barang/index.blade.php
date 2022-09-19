@@ -34,7 +34,7 @@
             <tr>
                 <td>{{$loop->iteration}}</td>
                 <td>{{$item->nama}}</td>
-                <td>{{$item->harga}}</td>
+                <td>RP. {{$item->harga}}</td>
                 <td>{{$item->stok}}</td>
                 {{-- jika id tidak ditemukan menjadi kosong --}}
                 <td>{{! empty($item->suplier->nama) ? $item->suplier->nama : ''}}</td>
